@@ -1,43 +1,15 @@
-import { OrbitControls, Sky, Billboard, Text } from '@react-three/drei';
-import { Canvas, useFrame, useLoader } from '@react-three/fiber';
-import React, { Suspense, useRef } from 'react';
+import { Sky, Billboard, Text } from '@react-three/drei';
+import { Canvas, useLoader } from '@react-three/fiber';
+import React, { Suspense } from 'react';
 
+//pathfinding
+//import { Pathfinding } from 'three-pathfinding';
+
+// Default texture Loader
 import { TextureLoader } from 'three/src/loaders/TextureLoader';
-
-// Test img
 import Default from './img/default.png';
 
-function Player() {
-    const ref = useRef();
-    
-    document.onkeydown = function (e) {
-        if (e.keyCode === 65) {
-           ref.current.position.x -= 1;
-        }
-        else if (e.keyCode === 68) {
-            ref.current.position.x += 1;
-        }
-        // W
-        else if (e.keyCode === 87) {
-            ref.current.position.z -= 1;
-        }
-        // S
-        else if (e.keyCode === 83) {
-            ref.current.position.z += 1;
-        }
-        //console.log(e);
-    }
-    useFrame(() => {
-       // ref.current.rotation.y += 0.01;
-    })
-    return(
-        <group ref={ref}>
-            <mesh>
-                <boxBufferGeometry/>
-            </mesh>
-        </group>
-    )
-}
+import PlayerControls from './PlayerControls';
 
 function Ground() {
     const texture = useLoader(TextureLoader, Default)
@@ -66,19 +38,15 @@ function Display() {
 export default function Home() {
     return(
         <div className='Main'>
-            <h1>Lorem Ipsum</h1>
             <Canvas>
               <ambientLight intensity={0.25} />
                 <Suspense fallback={null}>
-                    <perspectiveCamera/>
-                    <OrbitControls/>
-
-
+                    
                     {/* Skybox */}
                     <Sky azimuth={0.5} inclination={0.49} turbidity={100} rayleigh={0.8}/>
 
-                    {/* Test box */}
-                    <Player/>
+                    {/* Controls */}
+                    <PlayerControls/>
 
                     {/* Ground */}
                     <Ground/>
