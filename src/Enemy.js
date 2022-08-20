@@ -1,6 +1,7 @@
 import React from 'react';
 import { useBox } from "@react-three/cannon";
 import { useFrame } from '@react-three/fiber';
+import { Box } from "@react-three/drei";
 
   export default function Box1() {
     const [ref] = useBox(() => ({
@@ -16,8 +17,9 @@ import { useFrame } from '@react-three/fiber';
   
     return (
       <mesh ref={ref} castShadow>
-        <boxBufferGeometry attach="geometry" args={[2, 2, 2]} />
-        <meshStandardMaterial color="pink" />
+        <Box/>
+        <boxBufferGeometry attach="geometry" args={[2, 2, 2]} onclick/>
+        <meshStandardMaterial color="pink"/>
       </mesh>
     );
   }

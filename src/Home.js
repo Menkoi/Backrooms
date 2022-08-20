@@ -7,7 +7,6 @@ import Box1 from './Enemy';
 import Ground from './Map';
 import Player from './PlayerControls';
 
-
 function Display() {
     return (
         <group>
@@ -32,8 +31,6 @@ export default function Home() {
                     
                     {/* Skybox */}
                     <Sky azimuth={0.5} inclination={0.49} turbidity={100} rayleigh={0.8}/>
-
-                    
                     
                     {/* Cannon js physics */}
                     <Physics>
