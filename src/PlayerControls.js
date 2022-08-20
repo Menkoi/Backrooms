@@ -87,7 +87,8 @@ export default function PlayerControls() {
 
   return (
     <>
-      <PointerLockControls makeDefault ref={ref} />
+      <PointerLockControls makeDefault ref={ref}/>
+
     </>
   );
 }

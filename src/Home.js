@@ -1,27 +1,13 @@
 import { Sky, Billboard, Text } from '@react-three/drei';
-import { Canvas, useLoader } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import React, { Suspense } from 'react';
+import { Physics } from "@react-three/cannon";
 
-//pathfinding
-//import { Pathfinding } from 'three-pathfinding';
-
-// Default texture Loader
-import { TextureLoader } from 'three/src/loaders/TextureLoader';
-import Default from './img/default.png';
 
 import PlayerControls from './PlayerControls';
+import Box1 from './Enemy';
+import Ground from './Map'
 
-function Ground() {
-    const texture = useLoader(TextureLoader, Default)
-    return (
-        <group>
-            <mesh rotation={[4.71 , 0, 0]} position={[0, -0.5,0]}>
-            <planeBufferGeometry args={[50, 50, 50]}/>
-            <meshStandardMaterial map={texture}/>
-            </mesh>
-        </group>
-    )
-}
 
 function Display() {
     return (
@@ -48,10 +34,12 @@ export default function Home() {
                     {/* Controls */}
                     <PlayerControls/>
 
-                    {/* Ground */}
+                    <Physics>
+                    <Box1/>
                     <Ground/>
-
-                    {/* Camera instructions */}
+                    </Physics>
+                    
+                    {/* Text */}
                     <Display/>
 
                 </Suspense>
