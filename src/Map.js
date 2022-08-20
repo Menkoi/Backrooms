@@ -1,6 +1,6 @@
 import { useLoader } from '@react-three/fiber';
 import React from 'react';
-import {  usePlane } from "@react-three/cannon";
+import { usePlane } from "@react-three/cannon";
 
 // Default texture 
 import { TextureLoader } from 'three/src/loaders/TextureLoader';
