@@ -12,9 +12,6 @@ function Display() {
         <group>
             <Billboard>
                 <Text fontSize={0.3} position={[ 0,1,0]}>
-                    Move: W A S D
-                </Text>
-                <Text fontSize={0.3} position={[ 0,2,0]}>
                     click screen to use mouse
                 </Text>
             </Billboard>
