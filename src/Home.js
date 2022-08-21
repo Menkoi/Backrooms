@@ -3,15 +3,16 @@ import { Canvas } from '@react-three/fiber';
 import React, { Suspense } from 'react';
 import { Physics } from "@react-three/cannon";
 
-import Box1 from './Enemy';
-import Ground from './Map';
+import Walter from './Enemy';
+import Map from './Map';
 import Player from './PlayerControls';
+
 
 function Display() {
     return (
         <group>
             <Billboard>
-                <Text fontSize={0.3} position={[ 0,1,0]}>
+                <Text fontSize={0.3} position={[ 0,1,3]}>
                     click screen to use mouse
                 </Text>
             </Billboard>
@@ -30,11 +31,11 @@ export default function Home() {
                     <Sky azimuth={0.5} inclination={0.49} turbidity={100} rayleigh={0.8}/>
                     
                     {/* Cannon js physics */}
-                    <Physics>
+                    <Physics >
 
                     <Player/>
-                    <Box1/>
-                    <Ground/>
+                    <Walter/>
+                    <Map/>
 
                     </Physics>
                     

@@ -1,26 +1,41 @@
-import { useLoader } from '@react-three/fiber';
 import React from 'react';
-import { usePlane } from "@react-three/cannon";
+import { useLoader} from '@react-three/fiber';
+import { usePlane, Debug } from "@react-three/cannon";
 
 // Default texture 
 import { TextureLoader } from 'three/src/loaders/TextureLoader';
-import Default from './img/default.png';
+import Default from './img/default.png'
+//import DungeonMap from './Dungeon';
 
 
-export default function Ground() {
+export default function Map() {
+  return(
+    <group>
+      <Debug>
+      <Ground/>
+      </Debug>
+
+    </group>
+  )
+}
+
+function Ground() {
   const texture = useLoader(TextureLoader, Default)
     const [ref] = usePlane(() => ({
       mass: 1,
-      position: [0, 0, 0],
+      position: [0, 0, -30],
       type: "Static",
-      rotation: [-Math.PI / 2, 0, 0]
+      rotation: [-Math.PI / 2, 0, 3]
     }));
     
     return (
-      <mesh scale={20} ref={ref} receiveShadow>
+      <mesh scale={75} ref={ref} receiveShadow>
         <planeBufferGeometry />
         <meshStandardMaterial map={texture}  />
       </mesh>
     );
   };
+
+
+
 
