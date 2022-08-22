@@ -28,7 +28,7 @@ const usePlayerControls = () => {
 }
 
 export default function Player(props) {
-    const [ref, api] = useSphere(() => ({ mass: 1, type: "Dynamic", position: [0, 1, 5], ...props }))
+    const [ref, api] = useSphere(() => ({ mass: 1, type: "Dynamic", position: [0, 1, 5],  ...props }))
     const { forward, backward, left, right, jump } = usePlayerControls()
     const { camera } = useThree()
     const velocity = useRef([0, 0, 0])
@@ -42,14 +42,14 @@ export default function Player(props) {
       speed.fromArray(velocity.current)
 
       api.velocity.set(direction.x, velocity.current[1], direction.z)
-      if (jump && Math.abs(velocity.current[1].toFixed(2)) < 0.05) api.velocity.set(velocity.current[0], 5, velocity.current[2])
+      if (jump && Math.abs(velocity.current[1].toFixed(2)) < 0.05) api.velocity.set(velocity.current[0], 3, velocity.current[2])
     })
     return (
       <>
         <mesh ref={ref} />
         <group>
         <PointerLockControls/>
-        <boxBufferGeometry attach="geometry" args={[2, 2, 2]} />
+        <boxBufferGeometry attach="geometry" args={[5, 2, 2]} />
         </group>
       </>
     )

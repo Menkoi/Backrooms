@@ -1,9 +1,9 @@
-import { Sky, Billboard, Text } from '@react-three/drei';
+import { Sky, Billboard, Text, OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import React, { Suspense } from 'react';
 import { Physics } from "@react-three/cannon";
 
-import Walter from './Enemy';
+import Walter from './Walter';
 import Map from './Map';
 import Player from './PlayerControls';
 
@@ -13,7 +13,7 @@ function Display() {
         <group>
             <Billboard>
                 <Text fontSize={0.3} position={[ 0,1,3]}>
-                    click screen to use mouse
+                    Click screen to use mouse
                 </Text>
             </Billboard>
         </group>
@@ -33,8 +33,8 @@ export default function Home() {
                     {/* Cannon js physics */}
                     <Physics >
 
-                    <Player/>
-                    <Walter/>
+                    <OrbitControls/>
+                    
                     <Map/>
 
                     </Physics>
