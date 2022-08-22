@@ -83,14 +83,17 @@ export default function BackroomMap({ ...props }) {
           </group>
 
           {/* Left Side Wall */}
-          <group position={[-8.9, 0.51, -12.5]} rotation={[-Math.PI, 0, -Math.PI]}>
-            <mesh geometry={nodes.Object_27.geometry} material={materials.Skirting} />
-            <mesh geometry={nodes.Object_28.geometry} material={materials.Wall} />
-            <Wall args={[0.3,3.1,32]} position={[4.5,1.6,-18]} rotation={[-0.001,-0.14,0]}/>
+          <group position={[-8.9, 0.51, -0.68]} rotation={[-Math.PI, 0, -Math.PI]}>
+            <mesh geometry={nodes.Object_33.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_34.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,16]} position={[3.4,1.6,-10.01]} rotation={[-0.001,-0.14,0]}/> 
           </group>
+
+
           <group position={[-27.7, 0.51, -7]} rotation={[-Math.PI, 0, -Math.PI]}>
             <mesh geometry={nodes.Object_27.geometry} material={materials.Skirting} />
             <mesh geometry={nodes.Object_28.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,30]} position={[-27.9,1.6,-12.8]} rotation={[-0.001,-0.14,0]}/>
           </group>
           <group position={[-27.7, 0.51, -26]} rotation={[-Math.PI, 0, -Math.PI]}>
             <mesh geometry={nodes.Object_27.geometry} material={materials.Skirting} />
@@ -138,11 +141,33 @@ export default function BackroomMap({ ...props }) {
             <Wall args={[1,3.1,1]} position={[22.5,1.6,-8.3]} rotation={[-0.001,1.43,0]}/>
           </group>
 
+          <group position={[-25, 0.98, -1.2]}>
+            <mesh geometry={nodes.Object_68.geometry} material={materials.Wall} />
+            <mesh geometry={nodes.Object_69.geometry} material={materials.Skirting} />
+            <Wall args={[1,3.1,1]} position={[-23,1.6,-14.8]} rotation={[-0.001,1.43,0]}/>
+          </group>
+          <group position={[-25, 0.98, 6]}>
+            <mesh geometry={nodes.Object_68.geometry} material={materials.Wall} />
+            <mesh geometry={nodes.Object_69.geometry} material={materials.Skirting} />
+            <Wall args={[1,3.1,1]} position={[-24.8,1.6,-2.9]} rotation={[-0.001,1.43,0]}/>
+          </group>
+          <group position={[-21.2, 0.98, -1.2]}>
+            <mesh geometry={nodes.Object_68.geometry} material={materials.Wall} />
+            <mesh geometry={nodes.Object_69.geometry} material={materials.Skirting} />
+            <Wall args={[1,3.1,1]} position={[-16.8,1.6,-13.9]} rotation={[-0.001,1.43,0]}/>
+          </group>
+          <group position={[-21.2, 0.98, 6]}>
+            <mesh geometry={nodes.Object_68.geometry} material={materials.Wall} />
+            <mesh geometry={nodes.Object_69.geometry} material={materials.Skirting} />
+            <Wall args={[1,3.1,1]} position={[-18.5,1.6,-2]} rotation={[-0.001,1.43,0]}/>
+          </group>
+          
+
           {/* Rows Back Wall */}
-          <group position={[-11.59, 0.51, 8.6]}>
+          <group position={[-11.4, 0.51, 8.6]}>
             <mesh geometry={nodes.Object_39.geometry} material={materials.Skirting} />
             <mesh geometry={nodes.Object_40.geometry} material={materials.Wall} />
-            <Wall args={[0.3,3.1,2.8]} position={[-3.2,1.6,4.5]} rotation={[-0.001,-0.14,0]}/>
+            <Wall args={[0.3,3.1,2.8]} position={[-2.9,1.6,4.5]} rotation={[-0.001,-0.14,0]}/>
           </group>
           <group position={[-13.7, 0.51, 8.6]}>
             <mesh geometry={nodes.Object_39.geometry} material={materials.Skirting} />
@@ -157,10 +182,12 @@ export default function BackroomMap({ ...props }) {
           <group position={[-16.5, 0.51, 5]}>
             <mesh geometry={nodes.Object_39.geometry} material={materials.Skirting} />
             <mesh geometry={nodes.Object_40.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,2.8]} position={[-10.4,1.6,-2.5]} rotation={[-0.001,-0.14,0]}/>
           </group>
           <group position={[-13.73, 0.51, 5]}>
             <mesh geometry={nodes.Object_39.geometry} material={materials.Skirting} />
             <mesh geometry={nodes.Object_40.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,2.8]} position={[-5.9,1.6,-1.9]} rotation={[-0.001,-0.14,0]}/>
           </group>
           <group position={[-18.5, 0.51, 8.6]}>
             <mesh geometry={nodes.Object_39.geometry} material={materials.Skirting} />
@@ -197,6 +224,7 @@ export default function BackroomMap({ ...props }) {
           <group position={[-18.5, 0.51, -0.6]} rotation={[-Math.PI, 0, -Math.PI]}>
             <mesh geometry={nodes.Object_33.geometry} material={materials.Skirting} />
             <mesh geometry={nodes.Object_34.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,16]} position={[-12.5,1.6,-12.3]} rotation={[-0.001,-0.14,0]}/> 
           </group>
           <group position={[-11.5, 0.51, 3.5]} rotation={[-Math.PI, 0, -Math.PI]}>
             <mesh geometry={nodes.Object_12.geometry} material={materials.Skirting} />
@@ -206,15 +234,18 @@ export default function BackroomMap({ ...props }) {
           <group position={[-16.1, 0.51, 4.1]} rotation={[0, Math.PI / 2, 0]}>
             <mesh geometry={nodes.Object_15.geometry} material={materials.Skirting} />
             <mesh geometry={nodes.Object_16.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,8]} position={[-9.5,1.6,-4]} rotation={[-0.001,1.43,0]}/>
           </group>
           <group position={[-13.88, 0.51, 1.1]} rotation={[0, Math.PI / 2, 0]}>
             <mesh geometry={nodes.Object_15.geometry} material={materials.Skirting} />
             <mesh geometry={nodes.Object_16.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,8]} position={[-5.3,1.6,-8.4]} rotation={[-0.001,1.43,0]}/>
           </group>
 
           <group position={[-28, 0.51, -5.4]} rotation={[0, -Math.PI / 2, 0]}>
             <mesh geometry={nodes.Object_6.geometry} material={materials.Skirting} />
             <mesh geometry={nodes.Object_7.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,27]} position={[-13,1.6,-20.5]} rotation={[-0.001,1.43,0]}/>
           </group>
 
         </group>
