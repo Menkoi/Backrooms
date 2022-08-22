@@ -9,7 +9,17 @@ title: BackRooms
 import React from 'react';
 import { useGLTF } from '@react-three/drei';
 import Backroom from './Models/Backroom.glb';
-import { useConvexPolyhedron } from "@react-three/cannon";
+import { useConvexPolyhedron, useBox } from "@react-three/cannon";
+
+function Wall(props) {
+  //const texture = useLoader(TextureLoader, Default)
+  const [ref] = useBox(() => ({
+    mass: 10,
+    type: 'Static',
+    ...props
+  }));
+  
+}
 
 
 export default function BackroomMap({ ...props }) {
@@ -22,42 +32,76 @@ export default function BackroomMap({ ...props }) {
     <group ref={ref} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={1.67}>
         <group rotation={[Math.PI / 2, 0, 0]}>
+
+          {/* Floor Carpet Texture */}
         {/*  <mesh geometry={nodes.Object_4.geometry} material={materials.Carpet} /> */}
-          <group position={[-7.3, 0.51, -7.65]} rotation={[0, -Math.PI / 2, 0]}>
+
+        {/* Roof */}
+          <group position={[0, 1.92, 0.42]}>
+        {/*    <mesh geometry={nodes.Object_51.geometry} material={materials.CeilingFrame} />  */}
+          </group>
+          <group position={[-0.01, 1.94, 0.46]}>
+        {/*    <mesh geometry={nodes.Object_53.geometry} material={materials.Tiles} /> */}
+        {/*    <mesh geometry={nodes.Object_54.geometry} material={materials.Light} /> */}
+          </group>
+
+          {/* Front Wall */}
+          <group position={[-3, 0.51, -7.65]} rotation={[0, -Math.PI / 2, 0]}>
+            <mesh geometry={nodes.Object_6.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_7.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,22.5]} position={[22,1.6,-19.4]} rotation={[-0.001,1.43,0]}/>
+          </group>
+          <group position={[-8.7, 0.51, -28.4]} rotation={[0, -Math.PI / 2, 0]}>
             <mesh geometry={nodes.Object_6.geometry} material={materials.Skirting} />
             <mesh geometry={nodes.Object_7.geometry} material={materials.Wall} />
           </group>
-          <group position={[2.64, 0.51, 6.25]} rotation={[-Math.PI, 0, -Math.PI]}>
-            <mesh geometry={nodes.Object_12.geometry} material={materials.Skirting} />
-            <mesh geometry={nodes.Object_13.geometry} material={materials.Wall} />
+          <group position={[-25.4, 0.51, -28.4]} rotation={[0, -Math.PI / 2, 0]}>
+            <mesh geometry={nodes.Object_6.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_7.geometry} material={materials.Wall} />
           </group>
-          <group position={[-2.97, 0.51, -0.08]} rotation={[0, Math.PI / 2, 0]}>
-            <mesh geometry={nodes.Object_15.geometry} material={materials.Skirting} />
-            <mesh geometry={nodes.Object_16.geometry} material={materials.Wall} />
+
+          {/* Back Wall */}
+          <group position={[-26.3, 0.51, 9.5]} rotation={[0, -Math.PI / 2, 0]}>
+            <mesh geometry={nodes.Object_21.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_22.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,60]} position={[-0.8,1.6,6.4]} rotation={[-0.001,1.43,0]}/>  
           </group>
-          <group position={[-7.45, 0.51, -0.02]} rotation={[0, Math.PI / 2, 0]}>
-            <mesh geometry={nodes.Object_18.geometry} material={materials.Skirting} />
-            <mesh geometry={nodes.Object_19.geometry} material={materials.Wall} />
-          </group>
-          <group position={[-7.3, 0.51, 8.56]} rotation={[0, -Math.PI / 2, 0]}>
+          <group position={[-7.3, 0.51, 9.5]} rotation={[0, -Math.PI / 2, 0]}>
             <mesh geometry={nodes.Object_21.geometry} material={materials.Skirting} />
             <mesh geometry={nodes.Object_22.geometry} material={materials.Wall} />
           </group>
+
+          {/* Right Side Wall */}
           <group position={[7.97, 0.51, -7.15]} rotation={[-Math.PI, 0, -Math.PI]}>
             <mesh geometry={nodes.Object_24.geometry} material={materials.Skirting} />
             <mesh geometry={nodes.Object_25.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,30]} position={[31.1,1.6,-4.4]} rotation={[-0.001,-0.14,0]}/>
           </group>
-          <group position={[-8.42, 0.51, -7.15]} rotation={[-Math.PI, 0, -Math.PI]}>
+          <group position={[7.97, 0.51, -26]} rotation={[-Math.PI, 0, -Math.PI]}>
+            <mesh geometry={nodes.Object_24.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_25.geometry} material={materials.Wall} />
+          </group>
+
+          {/* Left Side Wall */}
+          <group position={[-8.9, 0.51, -12.5]} rotation={[-Math.PI, 0, -Math.PI]}>
+            <mesh geometry={nodes.Object_27.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_28.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,32]} position={[4.5,1.6,-18]} rotation={[-0.001,-0.14,0]}/>
+          </group>
+          <group position={[-27.7, 0.51, -7]} rotation={[-Math.PI, 0, -Math.PI]}>
             <mesh geometry={nodes.Object_27.geometry} material={materials.Skirting} />
             <mesh geometry={nodes.Object_28.geometry} material={materials.Wall} />
           </group>
-          <group position={[-6.55, 0.51, -4.87]} rotation={[0, -Math.PI / 2, 0]}>
-            <mesh geometry={nodes.Object_30.geometry} material={materials.Skirting} />
-            <mesh geometry={nodes.Object_31.geometry} material={materials.Wall} />
+          <group position={[-27.7, 0.51, -26]} rotation={[-Math.PI, 0, -Math.PI]}>
+            <mesh geometry={nodes.Object_27.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_28.geometry} material={materials.Wall} />
           </group>
-          <group position={[5.31, 0.51, -0.16]} rotation={[-Math.PI, 0, -Math.PI]}>
-            <mesh geometry={nodes.Object_33.geometry} material={materials.Skirting} />
-            <mesh geometry={nodes.Object_34.geometry} material={materials.Wall} />
+          
+          {/* Box Divider*/}
+          <group position={[-2.97, 0.51, -0.08]} rotation={[0, Math.PI / 2, 0]}>
+            <mesh geometry={nodes.Object_15.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_16.geometry} material={materials.Wall} />
+            <Wall args={[3.2,3.1,8.1]} position={[13.33,1.6,-9.3]} rotation={[-0.001,1.43,0]}/>
           </group>
           <group position={[-2.96, 0.51, -1.81]} rotation={[0, Math.PI / 2, 0]}>
             <mesh geometry={nodes.Object_36.geometry} material={materials.Skirting} />
@@ -71,41 +115,108 @@ export default function BackroomMap({ ...props }) {
             <mesh geometry={nodes.Object_42.geometry} material={materials.Skirting} />
             <mesh geometry={nodes.Object_43.geometry} material={materials.Wall} />
           </group>
-          <group position={[-6.1, 0.51, 4.14]} rotation={[0, -Math.PI / 2, 0]}>
+
+          {/* Support Beams */}
+          <group position={[-5.9, 0.98, 7]}>
+            <mesh geometry={nodes.Object_59.geometry} material={materials.Wall} />
+            <mesh geometry={nodes.Object_60.geometry} material={materials.Skirting}/>
+            <Wall args={[1.1,3.1,1.3]} position={[6.6,1.6,3.2]} rotation={[-0.001,1.43,0]}/>
+          </group>
+          <group position={[-0.04, 0.98, 7]}>
+            <mesh geometry={nodes.Object_62.geometry} material={materials.Wall} />
+            <mesh geometry={nodes.Object_63.geometry} material={materials.Skirting} />
+            <Wall args={[1.1,3.1,1.3]} position={[16.3,1.6,4.6]} rotation={[-0.001,1.43,0]}/>
+          </group>
+          <group position={[5.3, 0.98, 6.8]}>
+            <mesh geometry={nodes.Object_65.geometry} material={materials.Wall} />
+            <mesh geometry={nodes.Object_66.geometry} material={materials.Skirting} />
+            <Wall args={[1,3.1,1]} position={[25.1,1.6,5.5]} rotation={[-0.001,1.43,0]}/>
+          </group>
+          <group position={[2.5, 0.98, -1.2]}>
+            <mesh geometry={nodes.Object_68.geometry} material={materials.Wall} />
+            <mesh geometry={nodes.Object_69.geometry} material={materials.Skirting} />
+            <Wall args={[1,3.1,1]} position={[22.5,1.6,-8.3]} rotation={[-0.001,1.43,0]}/>
+          </group>
+
+          {/* Rows Back Wall */}
+          <group position={[-11.59, 0.51, 8.6]}>
+            <mesh geometry={nodes.Object_39.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_40.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,2.8]} position={[-3.2,1.6,4.5]} rotation={[-0.001,-0.14,0]}/>
+          </group>
+          <group position={[-13.7, 0.51, 8.6]}>
+            <mesh geometry={nodes.Object_39.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_40.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,2.8]} position={[-6.7,1.6,4]} rotation={[-0.001,-0.14,0]}/>
+          </group>
+          <group position={[-16.5, 0.51, 8.6]}>
+            <mesh geometry={nodes.Object_39.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_40.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,2.8]} position={[-11.3,1.6,3.3]} rotation={[-0.001,-0.14,0]}/>
+          </group>
+          <group position={[-16.5, 0.51, 5]}>
+            <mesh geometry={nodes.Object_39.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_40.geometry} material={materials.Wall} />
+          </group>
+          <group position={[-13.73, 0.51, 5]}>
+            <mesh geometry={nodes.Object_39.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_40.geometry} material={materials.Wall} />
+          </group>
+          <group position={[-18.5, 0.51, 8.6]}>
+            <mesh geometry={nodes.Object_39.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_40.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,2.8]} position={[-14.64,1.6,3]} rotation={[-0.001,-0.14,0]}/>
+          </group>
+          
+          {/* Random Walls */}
+          <group position={[-6.55, 0.51, -4.87]} rotation={[0, -Math.PI / 2, 0]}>
+            <mesh geometry={nodes.Object_30.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_31.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,23]} position={[16.5,1.6,-15.45]} rotation={[-0.001,1.43,0]}/>
+          </group>
+          <group position={[5.31, 0.51, -0.16]} rotation={[-Math.PI, 0, -Math.PI]}>
+            <mesh geometry={nodes.Object_33.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_34.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,16]} position={[26.8,1.6,-6.01]} rotation={[-0.001,-0.14,0]}/> 
+          </group>
+          <group position={[-6.57, 0.51, 4.11]} rotation={[0, -Math.PI / 2, 0]}>
             <mesh geometry={nodes.Object_45.geometry} material={materials.Skirting} />
             <mesh geometry={nodes.Object_46.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,15.8]} position={[10.2,1.6,-1.1]} rotation={[-0.001,1.43,0]}/>
           </group>
           <group position={[-4.45, 0.51, 1.91]} rotation={[0, -Math.PI / 2, 0]}>
             <mesh geometry={nodes.Object_48.geometry} material={materials.Skirting} />
             <mesh geometry={nodes.Object_49.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,15.8]} position={[14.1,1.6,-4.3]} rotation={[-0.001,1.43,0]}/>
           </group>
-          <group position={[0, 1.92, 0.42]}>
-        {/*    <mesh geometry={nodes.Object_51.geometry} material={materials.CeilingFrame} />  */}
+          <group position={[2.64, 0.51, 7.1]} rotation={[-Math.PI, 0, -Math.PI]}>
+            <mesh geometry={nodes.Object_12.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_13.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,8]} position={[20.7,1.6,5.4]} rotation={[-0.001,-0.14,0]}/> 
           </group>
-          <group position={[-0.01, 1.94, 0.46]}>
-        {/*    <mesh geometry={nodes.Object_53.geometry} material={materials.Tiles} /> */}
-        {/*    <mesh geometry={nodes.Object_54.geometry} material={materials.Light} /> */}
+          <group position={[-18.5, 0.51, -0.6]} rotation={[-Math.PI, 0, -Math.PI]}>
+            <mesh geometry={nodes.Object_33.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_34.geometry} material={materials.Wall} />
           </group>
-          <group position={[-5.9, 0.98, -3.32]}>
-            <mesh geometry={nodes.Object_56.geometry} material={materials.Wall} />
-            <mesh geometry={nodes.Object_57.geometry} material={materials.Skirting} />
+          <group position={[-11.5, 0.51, 3.5]} rotation={[-Math.PI, 0, -Math.PI]}>
+            <mesh geometry={nodes.Object_12.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_13.geometry} material={materials.Wall} />
+            <Wall args={[0.3,3.1,7.9]} position={[-1.8,1.6,-3.8]} rotation={[-0.001,-0.14,0]}/>
           </group>
-          <group position={[-5.9, 0.98, 6.13]}>
-            <mesh geometry={nodes.Object_59.geometry} material={materials.Wall} />
-            <mesh geometry={nodes.Object_60.geometry} material={materials.Skirting} />
+          <group position={[-16.1, 0.51, 4.1]} rotation={[0, Math.PI / 2, 0]}>
+            <mesh geometry={nodes.Object_15.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_16.geometry} material={materials.Wall} />
           </group>
-          <group position={[-0.04, 0.98, 6.13]}>
-            <mesh geometry={nodes.Object_62.geometry} material={materials.Wall} />
-            <mesh geometry={nodes.Object_63.geometry} material={materials.Skirting} />
+          <group position={[-13.88, 0.51, 1.1]} rotation={[0, Math.PI / 2, 0]}>
+            <mesh geometry={nodes.Object_15.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_16.geometry} material={materials.Wall} />
           </group>
-          <group position={[5.88, 0.98, 7.07]}>
-            <mesh geometry={nodes.Object_65.geometry} material={materials.Wall} />
-            <mesh geometry={nodes.Object_66.geometry} material={materials.Skirting} />
+
+          <group position={[-28, 0.51, -5.4]} rotation={[0, -Math.PI / 2, 0]}>
+            <mesh geometry={nodes.Object_6.geometry} material={materials.Skirting} />
+            <mesh geometry={nodes.Object_7.geometry} material={materials.Wall} />
           </group>
-          <group position={[0.95, 0.98, -3.34]}>
-            <mesh geometry={nodes.Object_68.geometry} material={materials.Wall} />
-            <mesh geometry={nodes.Object_69.geometry} material={materials.Skirting} />
-          </group>
+
         </group>
       </group>
     </group>
