@@ -40,13 +40,50 @@ export default function BackroomMap1({ ...props }) {
         
 
         {/* Roof */}
-        {/*  <group position={[0, 1.92, 0.42]}>
-            <mesh geometry={nodes.Object_51.geometry} material={materials.CeilingFrame} />  
+         <group position={[-10,1.92,-11]} scale={[2,1,2.3]}>
+            <mesh geometry={nodes.Object_51.geometry} material={materials.CeilingFrame} /> 
           </group>
-          <group position={[-0.01, 1.94, 0.46]}>
+          {/* Row 1 */}
+          <group position={[-0.01, 1.94, 3.4]}>
             <mesh geometry={nodes.Object_53.geometry} material={materials.Tiles} />
             <mesh geometry={nodes.Object_54.geometry} material={materials.Light} />
-          </group> */}
+          </group>
+          <group position={[-0.01, 1.94, -12.6]}>
+            <mesh geometry={nodes.Object_53.geometry} material={materials.Tiles} />
+            <mesh geometry={nodes.Object_54.geometry} material={materials.Light} />
+          </group>
+          <group position={[-0.01, 1.94, -28.6]}>
+            <mesh geometry={nodes.Object_53.geometry} material={materials.Tiles} />
+            <mesh geometry={nodes.Object_54.geometry} material={materials.Light} />
+          </group>
+          {/*Row 2 */}
+          <group position={[-16.7, 1.94, 3.4]}>
+            <mesh geometry={nodes.Object_53.geometry} material={materials.Tiles} />
+            <mesh geometry={nodes.Object_54.geometry} material={materials.Light} />
+          </group>
+          <group position={[-16.7, 1.94, -12.6]}>
+            <mesh geometry={nodes.Object_53.geometry} material={materials.Tiles} />
+            <mesh geometry={nodes.Object_54.geometry} material={materials.Light} />
+          </group> 
+          <group position={[-16.7, 1.94, -28.6]}>
+            <mesh geometry={nodes.Object_53.geometry} material={materials.Tiles} />
+            <mesh geometry={nodes.Object_54.geometry} material={materials.Light} />
+          </group> 
+
+          {/* Row 3 */}
+          <group position={[-33.3, 1.94, 3.4]}>
+            <mesh geometry={nodes.Object_53.geometry} material={materials.Tiles} />
+            <mesh geometry={nodes.Object_54.geometry} material={materials.Light} />
+          </group>
+
+          <group position={[-33.3, 1.94, -12.6]}>
+            <mesh geometry={nodes.Object_53.geometry} material={materials.Tiles} />
+            <mesh geometry={nodes.Object_54.geometry} material={materials.Light} />
+          </group>
+          <group position={[-33.3, 1.94, -28.6]}>
+            <mesh geometry={nodes.Object_53.geometry} material={materials.Tiles} />
+            <mesh geometry={nodes.Object_54.geometry} material={materials.Light} />
+          </group>
 
           {/* Front Wall */}
           <group position={[-8, 0.51, -28.4]} rotation={[0, -Math.PI / 2, 0]}>

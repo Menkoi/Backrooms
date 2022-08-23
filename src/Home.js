@@ -33,8 +33,8 @@ export default function Home() {
                     {/* Cannon js physics */}
                     <Physics >
 
-                    <OrbitControls/>
-                    
+                    <Player/>
+
                     <Map/>
 
                     </Physics>
