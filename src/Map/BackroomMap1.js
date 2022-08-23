@@ -8,7 +8,7 @@ title: BackRooms
 
 import React from 'react';
 import { useGLTF } from '@react-three/drei';
-import Backroom from './Models/Backroom.glb';
+import Backroom from '../Models/Backroom.glb';
 import { useConvexPolyhedron, useBox } from "@react-three/cannon";
 
 function Wall(props) {

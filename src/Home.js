@@ -3,9 +3,9 @@ import { Canvas } from '@react-three/fiber';
 import React, { Suspense } from 'react';
 import { Physics } from "@react-three/cannon";
 
-//import Walter from './Walter';
-import Map from './Map';
-import Player from './PlayerControls';
+import Walter from './Components/Walter';
+import Map from './Map/Map';
+import Player from './Components/PlayerControls';
 
 
 function Display() {
@@ -34,7 +34,7 @@ export default function Home() {
                     <Physics >
 
                     <Player/>
-
+                    <Walter/>
                     <Map/>
 
                     </Physics>
