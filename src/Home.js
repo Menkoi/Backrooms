@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import React, { Suspense } from 'react';
 import { Physics } from "@react-three/cannon";
 
-import Walter from './Walter';
+//import Walter from './Walter';
 import Map from './Map';
 import Player from './PlayerControls';
 
@@ -24,7 +24,7 @@ export default function Home() {
     return(
         <div className='Main'>
             <Canvas>
-              <ambientLight intensity={0.25} />
+              <ambientLight intensity={0.05} />
                 <Suspense fallback={null}>
                     
                     {/* Skybox */}

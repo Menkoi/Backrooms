@@ -1,29 +1,37 @@
 import React from 'react';
-//import { useLoader, useFrame } from '@react-three/fiber';
-//import { Box } from '@react-three/drei';
-import { usePlane, Debug, useBox } from "@react-three/cannon";
+import { usePlane } from "@react-three/cannon";
 
-// Default texture 
-//import { TextureLoader } from 'three/src/loaders/TextureLoader';
-//import Default from './img/default.png';
+// Bloom Effect
+import { EffectComposer, Bloom } from '@react-three/postprocessing';
 
-// Map
+// Maps
 import BackroomMap1 from './BackroomMap1';
 import BackroomMap2 from './BackroomMap2';
 
 export default function Map() {
   return(
     <group>
-
-        <BackroomMap1/>
-        <BackroomMap2/>
+      <Light/>
+      <BackroomMap1/>
+      <BackroomMap2/>
       <Floor/>
     </group>
   )
 }
 
+function Light() {
+  return(
+    <group>
+      <pointLight position={[-23, 10, -30]} intensity={0.3}/>
+      <pointLight position={[10, 10, -30]} intensity={0.3}/>
+      <EffectComposer>
+            <Bloom intensity={0.8} kernelSize={1} luminanceThreshold={0} luminanceSmoothing={0.8} />
+      </EffectComposer>
+    </group>
+  )
+}
+
 function Floor() {
-  //const texture = useLoader(TextureLoader, Default)
     const [ref] = usePlane(() => ({
       mass: 1,
       position: [0, 0, -30],
