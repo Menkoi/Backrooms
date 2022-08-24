@@ -1,6 +1,5 @@
 import React from 'react';
 import { usePlane } from "@react-three/cannon";
-import { SpotLight } from '@react-three/drei';
 
 // Bloom Effect
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
@@ -34,8 +33,8 @@ function Light() {
       <pointLight position={[20, 4.5, 3.5]} intensity={0.5} power={7} distance={20}/>
       <pointLight position={[20, 4.5, -30]} intensity={0.5} power={7} distance={20}/>
 
-      <pointLight position={[6, 4.5, -61]} intensity={0.5} power={20} distance={6}/>
-      <pointLight position={[-2, 4.5, -62]} intensity={0.5} power={20} distance={6}/>
+      
+      <pointLight position={[-2, 4.5, -62]} intensity={0.5} power={7} distance={6}/>
 
       <EffectComposer>
             <Bloom intensity={0.8} kernelSize={1} luminanceThreshold={0} luminanceSmoothing={0.8} />
@@ -51,11 +50,6 @@ function Floor() {
       type: "Static",
       rotation: [-Math.PI / 2, 0, 3]
     }));
-    
-    return (
-      <mesh scale={75} ref={ref} receiveShadow>
-      </mesh>
-    );
   };
 
 

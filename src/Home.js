@@ -1,11 +1,12 @@
 import { Sky, Billboard, Text, OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import React, { Suspense } from 'react';
-import { Physics } from "@react-three/cannon";
+import { Physics, Debug } from "@react-three/cannon";
 
 import Walter from './Components/Walter';
 import Map from './Map/Map';
 import Player from './Components/PlayerControls';
+import End from './Components/End';
 
 
 function Display() {
@@ -33,6 +34,7 @@ export default function Home() {
                     <Physics >
 
                     <Player/>
+                    <End/>
                     <Walter/>
                     <Map/>
 
