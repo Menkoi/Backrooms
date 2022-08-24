@@ -24,7 +24,6 @@ export default function Home() {
     return(
         <div className='Main'>
             <Canvas>
-              <ambientLight intensity={0.05} />
                 <Suspense fallback={null}>
                     
                     {/* Skybox */}
