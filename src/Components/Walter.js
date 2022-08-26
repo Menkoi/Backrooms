@@ -27,13 +27,6 @@ export default function Test() {
 
   function Walter() {
     const texture = useLoader(TextureLoader,Default)
-    const state = ({
-      api: {
-        End(position) {
-          if (position > 1) ++state.count
-        }
-      }
-    })
     const [ref,api] = useSphere(() => ({
       mass: 10,
       // Start position 3, 1, 0
