@@ -21,7 +21,6 @@ function Wall(props) {
   
 }
 
-
 export default function BackroomMap1({ ...props }) {
   //const group = useRef()
   const { nodes, materials } = useGLTF(Backroom)
