@@ -11,6 +11,7 @@ root.render(
     <div className='crosshair'/>
     <div className='CamTest'>
       <p>Use WASD to move</p>
+      <p>Click screen to use mouse</p>
     </div>
   </React.StrictMode>
 );

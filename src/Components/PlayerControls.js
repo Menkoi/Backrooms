@@ -34,7 +34,7 @@ export default function Player(props) {
     const velocity = useRef([0, 0, 0])
     useEffect(() => api.velocity.subscribe((v) => (velocity.current = v)))
 
-    useFrame((state) => {
+    useFrame(() => {
       ref.current.getWorldPosition(camera.position)
       frontVector.set(0, 0, Number(backward) - Number(forward))
       sideVector.set(Number(left) - Number(right), 0, 0)
@@ -49,7 +49,6 @@ export default function Player(props) {
         <mesh ref={ref} />
         <group>
         <PointerLockControls/>
-        <boxBufferGeometry attach="geometry"/>
         </group>
       </>
     )

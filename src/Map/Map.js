@@ -1,8 +1,9 @@
 import React from 'react';
 import { usePlane } from "@react-three/cannon";
+import { PointerLockControls, MeshDistortMaterial } from "@react-three/drei";
 
-// Bloom Effect
-import { EffectComposer, Bloom } from '@react-three/postprocessing';
+// Bloom/camera Effect
+import { EffectComposer, Bloom, DepthOfField, Noise } from '@react-three/postprocessing';
 
 // Maps
 import BackroomMap1 from './BackroomMap1';
@@ -33,11 +34,12 @@ function Light() {
       <pointLight position={[20, 4.5, 3.5]} intensity={0.5} power={7} distance={20}/>
       <pointLight position={[20, 4.5, -30]} intensity={0.5} power={7} distance={20}/>
 
-      
       <pointLight position={[-2, 4.5, -62]} intensity={0.5} power={7} distance={6}/>
 
       <EffectComposer>
             <Bloom intensity={0.8} kernelSize={1} luminanceThreshold={0} luminanceSmoothing={0.8} />
+            <Noise opacity={0.08} />
+            <DepthOfField focusDistance={0} focalLength={0.02}/>
       </EffectComposer>
     </group>
   )
