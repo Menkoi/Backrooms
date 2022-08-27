@@ -1,6 +1,6 @@
 import { Sky  } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import React, { Suspense, useState } from 'react';
+import React, { Suspense } from 'react';
 import { Physics } from "@react-three/cannon";
 
 // Components
@@ -8,21 +8,14 @@ import Walter from './Components/Walter';
 import Map from './Map/Map';
 import Player from './Components/PlayerControls';
 import End from './Components/End';
-//need to add start menu
 
 export default function Home() {
-    //let Backroom = useState(false)
     const button = document.querySelector('#startButton');
     button.addEventListener('click', function () {
-        const overlay = document.getElementById('overlay');
-        overlay.remove();
-
+    const overlay = document.getElementById('overlay');
+    overlay.remove();
     })
-    return(
-        <>
-        <Backroom/>
-        </>
-    )
+    return <Backroom/>
 }
 
 function Backroom() {

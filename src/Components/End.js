@@ -16,13 +16,13 @@ export default function End() {
       onCollide: (e) => {
         // Player body id = 436
         // walter body id = 440
-        const PlayerId = 475;
-        const WalterId = 479;
-        console.log(e)
+        const PlayerId = 430;
+        const WalterId = 433;
+        //console.log(e)
 
         // Walter touch cube = endgame
         if (e.body.id === WalterId) {
-          setButtonText('Refresh browser to play again')
+          setButtonText('You Win! Refresh browser to play again')
           console.log("Walter touch cube")
         } 
         // Player touch cube = demand walter

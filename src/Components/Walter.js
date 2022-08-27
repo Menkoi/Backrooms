@@ -1,14 +1,9 @@
 import React from 'react';
 import { useSphere } from "@react-three/cannon";
-import { useFrame, useLoader } from '@react-three/fiber';
-import { Sphere, Html, MeshWobbleMaterial, Float } from "@react-three/drei";
-
-// Default texture 
-import { TextureLoader } from 'three/src/loaders/TextureLoader';
-import Default from '../img/default.png';
+import { useFrame } from '@react-three/fiber';
+import { Sphere, MeshWobbleMaterial } from "@react-three/drei";
 
   export default function Walter() {
-    const texture = useLoader(TextureLoader,Default)
     const [ref,api] = useSphere(() => ({
       mass: 10,
       // Start position -2, 1, -21

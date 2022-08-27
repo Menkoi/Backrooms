@@ -1,6 +1,5 @@
 import React from 'react';
 import { usePlane } from "@react-three/cannon";
-import { PointerLockControls, MeshDistortMaterial } from "@react-three/drei";
 
 // Bloom/camera Effect
 import { EffectComposer, Bloom, DepthOfField, Noise } from '@react-three/postprocessing';
