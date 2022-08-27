@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSphere } from "@react-three/cannon";
 import { useFrame, useLoader } from '@react-three/fiber';
-import { Sphere, Html } from "@react-three/drei";
+import { Sphere, Html, MeshWobbleMaterial, Float } from "@react-three/drei";
 
 // Default texture 
 import { TextureLoader } from 'three/src/loaders/TextureLoader';
@@ -30,10 +30,7 @@ import Default from '../img/default.png';
         attach="geometry"
         args={[1, 32, 32]}
       />
-        <meshStandardMaterial map={texture} />
-        <Html style={{color: "white", fontWeight: 'Bold'}}>
-          <p>Walter</p>
-        </Html>
+        <MeshWobbleMaterial factor={1} speed={1} color={'white'} />
       </mesh>
     );
   }
