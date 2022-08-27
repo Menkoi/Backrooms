@@ -11,9 +11,9 @@ import Default from '../img/default.png';
     const texture = useLoader(TextureLoader,Default)
     const [ref,api] = useSphere(() => ({
       mass: 10,
-      // Start position 3, 1, 0
+      // Start position -2, 1, -21
       // end position -3.9, 0.26, -62.2
-      position: [3, 1, 0],
+      position: [-2, 1, -21],
       rotation: [0.4, 0.2, 0.5],
       args: [0.5, 0.5, 0.5],
       name: "Walter"

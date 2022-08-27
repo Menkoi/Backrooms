@@ -1,7 +1,6 @@
 import React, { useState} from 'react';
 import { useBox } from "@react-three/cannon";
-import { Float, Box, Text, MeshDistortMaterial } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
+import { Float, Box, Text } from '@react-three/drei';
 
 
 export default function End() {
@@ -21,14 +20,13 @@ export default function End() {
         const WalterId = 479;
         console.log(e)
 
-        // Walter touch cube = <3
+        // Walter touch cube = endgame
         if (e.body.id === WalterId) {
-          setButtonText('Refresh browser to play again ')
+          setButtonText('Refresh browser to play again')
           console.log("Walter touch cube")
         } 
         // Player touch cube = demand walter
         else if (e.body.id === PlayerId) {
-          //api.rotation.y += 1
           setButtonText('Your not Walter')
           console.log("Player touch cube")
         }
