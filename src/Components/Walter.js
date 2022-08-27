@@ -11,7 +11,8 @@ import { Sphere, MeshWobbleMaterial } from "@react-three/drei";
       position: [-2, 1, -21],
       rotation: [0.4, 0.2, 0.5],
       args: [0.5, 0.5, 0.5],
-      name: "Walter"
+      name: "Walter",
+      id: 1
     }));
     
     useFrame(() => {

@@ -14,10 +14,10 @@ export default function End() {
       type: "Static",
       name: "End Cube",
       onCollide: (e) => {
-        // Player body id = 118
-        // walter body id = 122
-        const PlayerId = 430 || 118;
-        const WalterId = 433 || 122;
+        // player id = 185, 385
+        // walter id = 388
+        const PlayerId = 430 || 385;
+        const WalterId = 433 || 388;
         console.log(e)
 
         // Walter touch cube = endgame
