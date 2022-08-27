@@ -18,7 +18,7 @@ export default function End() {
         // walter body id = 440
         const PlayerId = 430;
         const WalterId = 433;
-        //console.log(e)
+        console.log(e)
 
         // Walter touch cube = endgame
         if (e.body.id === WalterId) {
