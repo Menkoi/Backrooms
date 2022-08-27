@@ -9,7 +9,7 @@ root.render(
   <React.StrictMode>
     <App />
     <div className='crosshair'/>
-    <div className='CamTest'>
+    <div className='CamControls'>
       <p>Use WASD to move</p>
       <p>Click screen to use mouse</p>
     </div>

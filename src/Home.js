@@ -1,31 +1,31 @@
-import { Sky, Billboard, Text, OrbitControls } from '@react-three/drei';
+import { Sky  } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import React, { Suspense } from 'react';
-import { Physics, Debug } from "@react-three/cannon";
+import React, { Suspense, useState } from 'react';
+import { Physics } from "@react-three/cannon";
 
+// Components
 import Walter from './Components/Walter';
 import Map from './Map/Map';
 import Player from './Components/PlayerControls';
 import End from './Components/End';
-//Bring orb to spacebox
-
-//need to add object click to move
 //need to add start menu
 
+export default function Home() {
+    //let Backroom = useState(false)
+    const button = document.querySelector('#startButton');
+    button.addEventListener('click', function () {
+        const overlay = document.getElementById('overlay');
+        overlay.remove();
 
-function Display() {
-    return (
-        <group>
-            <Billboard>
-                <Text fontSize={0.3} position={[ 0,1,3]}>
-                    Click screen to use mouse
-                </Text>
-            </Billboard>
-        </group>
+    })
+    return(
+        <>
+        <Backroom/>
+        </>
     )
 }
 
-export default function Home() {
+function Backroom() {
     return(
         <div className='Main'>
             <Canvas>

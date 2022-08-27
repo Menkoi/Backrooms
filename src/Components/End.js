@@ -7,7 +7,7 @@ import { useFrame } from '@react-three/fiber';
 export default function End() {
   // Default text
   const [buttonText, setButtonText] = useState('Bring me Walter');
-    const [ref, api] = useBox(() => ({
+    const [ref] = useBox(() => ({
       mass: 1,
       position: [-4, 0.26, -62.2],
       rotation: [0, -0.14, 0],
@@ -23,8 +23,7 @@ export default function End() {
 
         // Walter touch cube = <3
         if (e.body.id === WalterId) {
-          
-          setButtonText('<3')
+          setButtonText('Refresh browser to play again ')
           console.log("Walter touch cube")
         } 
         // Player touch cube = demand walter

@@ -23,13 +23,50 @@
   background-color: white;
 }
 
-.CamTest {
+.CamControls {
   position: absolute;
   text-align: center;
   top: 90%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
   color: aliceblue;
+}
+
+#overlay {
+  position: fixed;
+  width: 100%;
+  top:50%;
+  left:50%;
+  border-radius: 5px;
+  transform: translate(-50%,-50%);
+  background-color: black;
+  animation-name: fade;
+  animation-duration: 0.5s;
+
+  height: 100vh;
+  padding: 25px;
+}
+
+#startButton {
+    padding: 1em;
+    width: 100px;
+    color: black;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 1;
+    background-color: aliceblue;
+}
+
+#overlay-text {
+  color: whitesmoke;
+  padding: 20px;
+  transform: translate(20%,0%);
+}
+
+@keyframes fade {
+  from {opacity: 0}
+  to {opacity: 1}
 }
 
 
