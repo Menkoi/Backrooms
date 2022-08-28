@@ -12,23 +12,29 @@ export default function End() {
       rotation: [0, -0.14, 0],
       args: [0.5, 2, 0.5],
       type: "Static",
-      name: "End Cube",
+      id: 4,
       onCollide: (e) => {
         // player id = 185, 385, 430
         // walter id = 188, 388, 433
-        const PlayerId = 388;
-        const WalterId = 385;
+        const PlayerId = [188, 388, 433];
+        const WalterId = [185, 385, 430];
         console.log(e)
 
         // Walter touch cube = endgame
+        for (let k = 0; k < WalterId.length; k++) {
         if (e.body.id === WalterId ) {
           setButtonText('You Win! Refresh browser to play again')
           console.log("Walter touch cube")
         } 
+        }
+
         // Player touch cube = demand walter
-        else if (e.body.id === PlayerId ) {
+        for (let i = 0; i < PlayerId.length; i++) {
+         if (e.body.id === PlayerId[i]) {
           setButtonText('Your not Walter')
           console.log("Player touch cube")
+          console.log(PlayerId[i])
+        }
         }
       }
     }));
