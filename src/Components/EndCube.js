@@ -2,8 +2,7 @@ import React, { useState} from 'react';
 import { useBox } from "@react-three/cannon";
 import { Float, Box, Text } from '@react-three/drei';
 
-
-export default function End() {
+export default function EndCube() {
   // Default text
   const [buttonText, setButtonText] = useState('Bring me Walter');
     const [ref] = useBox(() => ({
@@ -16,24 +15,24 @@ export default function End() {
       onCollide: (e) => {
         const PlayerId = [188, 388, 433];
         const WalterId = [191, 391, 436];
-        console.log(e)
+        console.log(e);
 
         // Walter touch cube = endgame
         for (let k = 0; k < WalterId.length; k++) {
-        if (e.body.id === WalterId[k]) {
-          setButtonText('You Win! Refresh browser to play again')
-          console.log("Walter touch cube")
-        } 
+          if (e.body.id === WalterId[k]) {
+            setButtonText("You Win! Refresh browser to play again");
+            console.log("Walter touch cube");
+          }
         }
 
         // Player touch cube = demand walter
         for (let i = 0; i < PlayerId.length; i++) {
-         if (e.body.id === PlayerId[i]) {
-          setButtonText('Your not Walter')
-          console.log("Player touch cube")
+          if (e.body.id === PlayerId[i]) {
+            setButtonText("Your not Walter");
+            console.log("Player touch cube");
+          }
         }
-        }
-      }
+      },
     }));
 
     return (

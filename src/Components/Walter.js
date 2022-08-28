@@ -10,8 +10,7 @@ import { Sphere, MeshWobbleMaterial } from "@react-three/drei";
       // end position -3.9, 0.26, -62.2
       position: [-2, 1, -21],
       rotation: [0.4, 0.2, 0.5],
-      args: [0.5, 0.5, 0.5],
-      name: "Walter",
+      args: [0.5, 0.5, 0.5]
     }));
     
     useFrame(() => {
@@ -23,7 +22,7 @@ import { Sphere, MeshWobbleMaterial } from "@react-three/drei";
         <Sphere onClick={() => api.applyImpulse([0, 0, -10], [0, 0, 0])}/>
         <sphereBufferGeometry
         attach="geometry"
-        args={[1, 32, 32]}
+        args={[1, 40, 32]}
       />
         <MeshWobbleMaterial factor={1} speed={1} color={'white'} />
       </mesh>
