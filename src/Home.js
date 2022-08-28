@@ -8,6 +8,7 @@ import Walter from './Components/Walter';
 import Map from './Map/Map';
 import Player from './Components/PlayerControls';
 import End from './Components/End';
+import Loading from './Components/Loading';
 
 export default function Home() {
     const button = document.querySelector('#startButton');
@@ -22,7 +23,7 @@ function Backroom() {
     return(
         <div className='Main'>
             <Canvas>
-                <Suspense fallback={null}>
+                <Suspense fallback={<Loading/>}>
                     
                     {/* Skybox */}
                     <Sky azimuth={0.5} inclination={0.49} turbidity={100} rayleigh={0.8}/>
