@@ -16,8 +16,8 @@ export default function End() {
       onCollide: (e) => {
         // player id = 185, 385, 430
         // walter id = 188, 388, 433
-        const PlayerId =  430;
-        const WalterId = 433;
+        const PlayerId =  430 || 185;
+        const WalterId = 433 || 188;
         console.log(e)
 
         // Walter touch cube = endgame
