@@ -40,11 +40,11 @@ This being my first time using Cannon.js, after reading the documentation I was 
 To have the player be able to interact with objects I created a sphere and inside the sphere is a camera (first person) so in reality you are just controlling a normal sphere. You can find this in the PlayerControls.js file. I decided to do this because adding another custom 3D model could be more demanding on older system hardware causing frame rate drops and lag.
 
 ### Map
-Based on the backrooms map by Huuxloc on sketchfab, although is a great map I made some personal changes. The original map was too small for what I wanted so I imported the original model using GLTFJSX and added more walls and expanded the map overall. Once I had the map how I wanted I went to every wall and added invisible barriers to each wall to add collision detection. Once eveything was finish I tested it by walking around the map to make sure you couldnt phase through ay walls.
+Based on the backrooms map by Huuxloc on sketchfab, although is a great map I made some personal changes. The original map was too small for what I wanted so I imported the original model using GLTFJSX and added more walls and expanded the map overall. Once I had the map how I wanted I went to every wall and added invisible barriers to each wall to add collision detection. Once eveything was finish I tested it by walking around the map to make sure you couldn't phase through any walls.
 After that I added the proper floor texture and made sure it covered the entire play area as well as adding the roof, making sure that both have invisible barriers.
 
 ### Effects/Lighting
-Using react postprocessing and react drei, I added pointlights to specific parts of the map so some are darker than others. Using the Bloom effect I added a soft glow around more brighter object for example the roof lights and text. I also added some grain noise to the map to give a more unsettling feeling. Once that was working I also added depth of field similar to how a camera works, sharp image when close but blurry when far away.
+Using react postprocessing and react drei, I added pointlights to specific parts of the map so some are darker than others. Using the Bloom effect I added a soft glow around more brighter object for example the roof lights and text. I also added some grain noise to the map to give a more unsettling feeling. Once that was working I also added depth of field similar to how a camera works, sharper image when close but blurry when far away.
 
 ## Developer Screenshots
 <img src="https://i.imgur.com/ij50OKw.png"/>
