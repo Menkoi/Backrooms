@@ -14,15 +14,13 @@ export default function End() {
       type: "Static",
       id: 4,
       onCollide: (e) => {
-        // player id = 185, 385, 430
-        // walter id = 188, 388, 433
         const PlayerId = [188, 388, 433];
-        const WalterId = [185, 385, 430];
+        const WalterId = [191, 391, 436];
         console.log(e)
 
         // Walter touch cube = endgame
         for (let k = 0; k < WalterId.length; k++) {
-        if (e.body.id === WalterId ) {
+        if (e.body.id === WalterId[k]) {
           setButtonText('You Win! Refresh browser to play again')
           console.log("Walter touch cube")
         } 
@@ -33,7 +31,6 @@ export default function End() {
          if (e.body.id === PlayerId[i]) {
           setButtonText('Your not Walter')
           console.log("Player touch cube")
-          console.log(PlayerId[i])
         }
         }
       }
