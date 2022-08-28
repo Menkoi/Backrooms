@@ -14,19 +14,21 @@ export default function End() {
       type: "Static",
       name: "End Cube",
       onCollide: (e) => {
-        // player id = 185, 385
-        // walter id = 388
-        const PlayerId = 430 || 385;
-        const WalterId = 433 || 388;
+        // player id = 185, 385, 430
+        // walter id = 188, 388, 433
+        const PlayerId1 = 185;
+        const PlayerId2 = 385;
+        const WalterId1 = 188;
+        const WalterId2 = 388;
         console.log(e)
 
         // Walter touch cube = endgame
-        if (e.body.id === WalterId) {
+        if (e.body.id === WalterId1 || WalterId2) {
           setButtonText('You Win! Refresh browser to play again')
           console.log("Walter touch cube")
         } 
         // Player touch cube = demand walter
-        else if (e.body.id === PlayerId) {
+        else if (e.body.id === PlayerId1 || PlayerId2) {
           setButtonText('Your not Walter')
           console.log("Player touch cube")
         }
