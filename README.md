@@ -5,7 +5,7 @@
 
 Video demo: []
 
-**The framerate will depend on you hardware system specifications**
+**The framerate will depend on your hardware system specifications**
 
 ## Description
 My final project for Harvard CS50 course is a small 3D game loosely based off of the backrooms creepypasta. The game is in first person and uses the mouse and WASD keys to move around the world. 
@@ -22,7 +22,7 @@ You can view the game here: https://menkoi.github.io/Backrooms/
 2. React Three Drei (WebGL)
 3. React Three Postprocessing
 4. Cannon.js (Physics Engine)
-5. GLTFJSX (importing 3D models)
+5. GLTFJSX (Importing 3D models)
 
 ## Map Model
 - Map based on: Huuxloc 

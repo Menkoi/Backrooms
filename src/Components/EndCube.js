@@ -14,8 +14,9 @@ export default function EndCube() {
       id: 4,
       onCollide: (e) => {
         const PlayerId = [188, 388, 433, 719, 677];
-        const WalterId = [191, 391, 436, 722, 680];
+        const WalterId = [191, 391, 436, 722, 385];
         console.log(e);
+        console.log(PlayerId)
 
         // Walter touch cube = endgame
         for (let k = 0; k < WalterId.length; k++) {
