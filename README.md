@@ -11,13 +11,19 @@ The goal is to find the Walter sphere and using the physics engine, bump walter 
 **Tip: Not all walls are made the same**
 
 ## Instructions
-You can view the game here: [https://menkoi.github.io/Backrooms/]
+You can view the game here: https://menkoi.github.io/Backrooms/
 
 ## Technologies
-React Three Fiber
-React Three Drei (WebGL)
-React Three Postprocessing
-Cannon.js (Physics Engine)
+1. React Three Fiber
+2. React Three Drei (WebGL)
+3. React Three Postprocessing
+4. Cannon.js (Physics Engine)
+5. GLTFJSX (importing 3D models)
+
+## Model
+Map based on: Huuxloc 
+Original map: (https://sketchfab.com/3d-models/backrooms-1da6a7f2e0294ba9a4123f61244811a8)
+license: CC-BY-4.0
 
 ## Developer Screenshots
 <img src="https://i.imgur.com/ij50OKw.png"/>
