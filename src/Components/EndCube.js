@@ -13,7 +13,7 @@ export default function EndCube() {
       type: "Static",
       id: 4,
       onCollide: (e) => {
-        const PlayerId = [188, 388, 433, 719, 677];
+        const PlayerId = [188, 388, 433, 719, 677, 474];
         const WalterId = [191, 391, 436, 722, 385, 427];
         console.log(e);
         console.log(PlayerId)
