@@ -3,14 +3,12 @@
 # Backrooms Game
 ![badmath](https://img.shields.io/badge/License-MIT-blue)
 
-Video demo: []
-
 **The framerate will depend on your hardware system specifications**
 
 ## Description
 My final project for Harvard CS50 course is a small 3D game loosely based off of the backrooms creepypasta. The game is in first person and uses the mouse and WASD keys to move around the world. 
 
-The goal is to find the Walter sphere and using the physics engine, bump walter into the hidden cube.
+The goal is to find the Walter sphere and using the physics engine, bump Walter into the hidden cube.
 
 **Not all walls are made the same**
 
@@ -56,6 +54,4 @@ Using react postprocessing and react drei, I added pointlights to specific parts
   - Menkoi
   - https://github.com/Menkoi
   - celaeon@gmail.com
-
-Made with ❤️ by Brandon Burton.
 
