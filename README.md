@@ -49,9 +49,3 @@ Using react postprocessing and react drei, I added pointlights to specific parts
 <img src="https://i.imgur.com/X8jbq0D.png"/>
 <img src="https://i.imgur.com/r9ZZTCP.png"/>
 <img src="https://i.imgur.com/zFGw26T.png"/>
-
-## Contact Me
-  - Menkoi
-  - https://github.com/Menkoi
-  - celaeon@gmail.com
-
